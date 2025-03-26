@@ -1,5 +1,6 @@
 ﻿using Backend_Mobile.Entities;
 using Backend_Mobile.Services.ProductService;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -7,6 +8,7 @@ namespace Backend_Mobile.Controllers
 {
     [ApiController]
     [Route("/api/[controller]/[Action]")]
+    [Authorize]
     public class ProductController : ControllerBase
     {
         private readonly IProductService _productService;

@@ -37,7 +37,7 @@ namespace Backend_Mobile.Controllers
             var token = await _userService.AuthenticateUser(request.Email, request.Password);
             if (token == null)
             {
-                return Unauthorized("Invalid email or password.");
+                return BadRequest("Invalid email or password.");
             }
             return Ok(new { Token = token });
         }
